@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose  from "mongoose";
-
+import productRoutes from './Routes/productRoutes.js'
+import purchaseRoutes from './Routes/purchaseRoutes.js'
 import userRoutes from "./Routes/userRoutes.js"
 import authRoutes from './Routes/authRoutes.js'
 import { insertUser, updateUser } from "./Controller/userController.js";
@@ -11,6 +12,8 @@ app.use('/insert',userRoutes)
 app.use('/update',userRoutes)
 app.use('/delete',userRoutes)
 app.use('/auth', authRoutes)
+app.use('/product', productRoutes);
+app.use('/purchase',purchaseRoutes)
 
 await mongoose.connect('mongodb://127.0.0.1:27017/powertools').then(()=>{
     app.listen(9000,()=>console.log('Server Running in port 9000'))
