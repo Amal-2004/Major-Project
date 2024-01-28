@@ -8,8 +8,8 @@ const purchaseSchema = new mongoose.Schema({
   productName: { type: String, required: true },
   deliveryPerson: { type: String },
   purchaseDate: { type: Date, default: Date.now },
-});
+})
 
-const Purchase = mongoose.model('Purchase', purchaseSchema);
+const Purchase = mongoose.model('Purchase', purchaseSchema)
 
-export default Purchase;
+export default Purchase

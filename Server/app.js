@@ -1,9 +1,10 @@
 import express from "express";
 import mongoose  from "mongoose";
-import productRoutes from './Routes/productRoutes.js'
-import purchaseRoutes from './Routes/purchaseRoutes.js'
 import userRoutes from "./Routes/userRoutes.js"
 import authRoutes from './Routes/authRoutes.js'
+import productRoutes from './Routes/productRoutes.js'
+import purchaseRoutes from './Routes/purchaseRoutes.js'
+
 import { insertUser, updateUser } from "./Controller/userController.js";
 
 const app =express()
