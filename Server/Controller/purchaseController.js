@@ -62,4 +62,4 @@ export default {
   getPurchaseById,
   updatePurchase,
   deletePurchase,
-};
+}

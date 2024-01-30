@@ -1,4 +1,29 @@
 import Product from '../Models/product.js'
+
+//Creating New Product
+const createProduct = async (req, res) => {
+  try {
+    const { productName, productPrice, description } = req.body;
+    if (!productName || !productPrice || !description) {
+      throw new Error('Required properties are missing in the request body');
+    }
+
+    const newProduct = new Product({
+      productName,
+      productPrice,
+      description
+    });
+
+    const savedProduct = await newProduct.save();
+    res.status(201).json(savedProduct);
+    console.log("Product Inserted Successfully");
+  } catch (error) {
+    console.error('Error creating product:', error.message);
+    res.status(400).json({ message: error.message });
+  }
+};
+
+//get all products
 const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find()
@@ -18,17 +43,7 @@ const getProductById = async (req, res) => {
     res.status(404).json({ message: 'Product not found' })
   }
 };
-//Creating New Product
-const createProduct = async (req, res) => {
-  const product = new Product(req.body)
-  try {
-    const newProduct = await product.save()
-    res.status(201).json(newProduct)
-    console.log("Product Inserted Succesfully")
-  } catch (error) {
-    res.status(400).json({ message: error.message })
-  }
-}
+
 //Updating a eisting product using ID
 const updateProduct = async (req, res) => {
   try {
