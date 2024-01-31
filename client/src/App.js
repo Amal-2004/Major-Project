@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Amal<code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        Google
-        </a>
-      </header>
-    </div>
-  );
+import { Route, Routes } from "react-router-dom";
+import LoginForm from "./login/login";
+import SignupForm from "./login/signup";
+import Dashboard from "./component/assets/js/dashboard";
+import Forgetpassword from "./component/assets/js/forgetpassword";
+function App()
+{
+  return(
+    <>
+    <Routes>
+      <Route path="/" Component={LoginForm}/>
+      <Route path="/signup" Component={SignupForm}/>
+      <Route path="/dashboard" Component={Dashboard}/>
+      <Route path="/forgetpassword" Component={Forgetpassword}/>
+    </Routes>
+    
+    </>
+  )
 }
+export default App
 
-export default App;
+
+
+
