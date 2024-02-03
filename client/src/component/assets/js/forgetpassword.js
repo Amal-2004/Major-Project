@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import '../css/forget.css'
 import { Button, TextField, Typography } from '@mui/material';
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  const handleSubmit = async () => {
+    if (!email) {
+      Swal.fire('Error!', 'Fill the Email field', 'error');
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire('Error!', 'Invalid email format', 'error');
+      return;
+    }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Here you would handle the logic to send a reset password link to the provided email address
-    // For demonstration purposes, let's just display a message
     setMessage(`Password reset link sent to ${email}`);
-    setEmail(''); // Clear email field after submission
+  
+    setEmail(''); 
+    window.location.href = '/otp';
   };
 
   return (
-
-    <form onSubmit={handleSubmit}>
-
-      <Typography variant="h5" align="center" gutterBottom>
-        Forgot Your Password?
+    <div id='forget-body'>
+       <div id='forget'>
+        
+      <Typography id="title" variant="h5"  gutterBottom>
+        Enter your email to get OTP
       </Typography>
 
       <TextField
@@ -34,15 +40,11 @@ const ForgetPassword = () => {
         label="Email Address"
         name="email"
         value={email}
-        onChange={handleEmailChange} />
+        onChange={(e) => setEmail(e.target.value)} />
 
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
         Submit
       </Button>
-
-      <Link id="" to='/' style={{ cursor: 'pointer', color: '#1976D2' }}>
-        Back to Login
-      </Link>
 
       {message && (
 
@@ -52,8 +54,8 @@ const ForgetPassword = () => {
 
       )}
 
-    </form>
-
+    </div>
+    </div>
   );
 };
 

@@ -54,6 +54,9 @@ const SignupForm = () => {
   
       Swal.fire('Success!', 'Signup successful!', 'success');
       setUsername('')
+      setEmail('')
+      setPassword('')
+      setShowConfirmPassword('')
       // Optionally, you can redirect the user to another page upon successful signup
       // window.location.href = '/login';
     } catch (error) {

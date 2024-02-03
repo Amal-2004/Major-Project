@@ -54,10 +54,6 @@ const LoginForm = () => {
     }
   };
 
-  const handleForgotPassword = () => {
-    Swal.fire('Forgot Password', 'Redirect to forgot password page', 'info');
-  };
-
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -111,7 +107,7 @@ const LoginForm = () => {
         </Button>
 
         <Typography variant="body2" style={{ marginTop: '10px' }}>
-          <Link id="forget" to='/forgetpassword' style={{ cursor: 'pointer', color: '#1976D2' }} onClick={handleForgotPassword}>
+          <Link id="forget-link" to='/forgetpassword' style={{ cursor: 'pointer', color: '#1976D2' }}>
             Forgot Password?
           </Link>
         </Typography>
