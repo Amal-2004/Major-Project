@@ -1,25 +1,24 @@
 import Product from '../Models/product.js'
 
-//Creating New Product
 const createProduct = async (req, res) => {
   try {
-    const { productName, productPrice, description } = req.body;
+    const { productName, productPrice, description } = req.body
     if (!productName || !productPrice || !description) {
-      throw new Error('Required properties are missing in the request body');
+      throw new Error('Required properties are missing in the request body')
     }
 
     const newProduct = new Product({
       productName,
       productPrice,
       description
-    });
+    })
 
-    const savedProduct = await newProduct.save();
-    res.status(201).json(savedProduct);
-    console.log("Product Inserted Successfully");
+    const savedProduct = await newProduct.save()
+    res.status(201).json(savedProduct)
+    console.log("Product Inserted Successfully")
   } catch (error) {
-    console.error('Error creating product:', error.message);
-    res.status(400).json({ message: error.message });
+    console.error('Error creating product:', error.message)
+    res.status(400).json({ message: error.message })
   }
 };
 
@@ -42,12 +41,12 @@ const getProductById = async (req, res) => {
   catch (error) {
     res.status(404).json({ message: 'Product not found' })
   }
-};
+}
 
 //Updating a eisting product using ID
 const updateProduct = async (req, res) => {
   try {
-    const productId = req.params.id.trim(); // Trim the product ID
+    const productId = req.params.id.trim(); 
     const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, { new: true })
 
     if (!updatedProduct) {

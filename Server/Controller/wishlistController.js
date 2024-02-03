@@ -4,43 +4,36 @@ import Wishlist from '../Models/wishlistModal.js';
 const wishlistProduct = async (req, res) => {
   try {
     console.log(455);
-    const { customerID, productID } = req.body;
-
-    // Create a new Wishlist instance
+    const { customerID, productID } = req.body
     const newWishlist = new Wishlist({
       customerID,
       productID,
     });
-
-    // Save the new wishlist to the database
-    const savedWishlist = await newWishlist.save();
-
-    // Respond with the saved wishlist
+    const savedWishlist = await newWishlist.save()
     res.status(201).json(savedWishlist);
-    console.log('Wishlist Created Successfully');
+    console.log('Wishlist Created Successfully')
   } catch (error) {
-    // Handle errors
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message })
   }
 };
 
 // Get a wishlist by ID
 const getWishlistById = async (req, res) => {
   try {
-    const wishlist = await Wishlist.findById(req.params.id);
+    const wishlist = await Wishlist.findById(req.params.id)
     if (!wishlist) {
-      return res.status(404).json({ message: 'Wishlist not found' });
+      return res.status(404).json({ message: 'Wishlist not found' })
     }
-    res.json(wishlist);
+    res.json(wishlist)
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: error.message })
   }
 };
 
 // Update a wishlist by ID
 const updateWishlist = async (req, res) => {
   try {
-    const updatedWishlist = await Wishlist.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedWishlist = await Wishlist.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
     if (!updatedWishlist) {
       return res.status(404).json({ message: 'Wishlist not found' });
