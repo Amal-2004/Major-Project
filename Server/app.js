@@ -6,6 +6,7 @@ import authRoutes from './Routes/authRoutes.js'
 import productRoutes from './Routes/productRoutes.js'
 import purchaseRoutes from './Routes/purchaseRoutes.js'
 import wishlistRoutes from './Routes/wishlistRoutes.js'
+import cartRoutes from './Routes/cartRoutes.js'
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use('/auth', authRoutes)
 app.use('/product', productRoutes)
 app.use('/purchase', purchaseRoutes)
 app.use('/wishlist', wishlistRoutes)
+app.use('/cart',cartRoutes)
 
 await mongoose.connect('mongodb://127.0.0.1:27017/powertools').then(() => {
   app.listen(9000, () => console.log('Server Running in port 9000'))
