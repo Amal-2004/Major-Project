@@ -2,14 +2,16 @@ import Product from '../Models/product.js'
 
 const createProduct = async (req, res) => {
   try {
-    const { productName, productPrice, description } = req.body
-    if (!productName || !productPrice || !description) {
+    const { productName, productPrice, productModel,description } = req.body
+    console.log(productName, productPrice, productModel,description)
+    if (!productName || !productPrice ||!productModel || !description) {
       throw new Error('Required properties are missing in the request body')
     }
 
     const newProduct = new Product({
       productName,
       productPrice,
+      productModel,
       description
     })
 
