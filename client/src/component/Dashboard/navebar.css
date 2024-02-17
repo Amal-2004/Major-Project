@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.side-body{
+    display: flex;
+}
+.sidebar{
+    background:rgb(0, 0, 255);
+    color: white;
+    height: 100vh;
+    border-right: 10px;
+} 
+.side-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+.link{
+    display: flex;
+    color: whitesmoke;
+    gap: 10px;
+    font-size: 20px;
+    padding: 10px 30px;
+    transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+}
+.link:hover{
+    border-radius: 4px solid whitesmoke;
+    transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+    background:1px solid red;
+}

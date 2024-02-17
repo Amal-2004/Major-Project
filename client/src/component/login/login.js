@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import { TextField, Button, Typography } from '@mui/material';
 import Swal from 'sweetalert2';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
+import '../login/login.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import '../component/assets/css/login.css';
-
+import { TextField, Button, Typography,IconButton,InputAdornment } from '@mui/material';
+ 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -63,8 +61,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div id='main'>
-      <div className='body'>
+    <div id='login-body'>
+      <div className='login'>
         <Typography variant="h4" id="head" gutterBottom>
           Login
         </Typography>
@@ -88,7 +86,7 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           InputProps={{
             endAdornment: (
-              <InputAdornment position="end">
+              <InputAdornment position="center">
                 <IconButton
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}

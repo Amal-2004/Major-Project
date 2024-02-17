@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import '../component/assets/css/signup.css';
+import '../signup/signup.css';
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');

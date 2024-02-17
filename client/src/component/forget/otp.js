@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../css/otp.css';
+import '../forget/otp.css';
 import { Typography, Button } from '@mui/material';
 import { MuiOtpInput } from 'mui-one-time-password-input';
 
 const Otp = () => {
   const [otp, setOtp] = useState('');
-  const [resendTime, setResendTime] = useState(60); // Initial time before next resend in seconds
+  const [resendTime, setResendTime] = useState(60); 
 
   const handleChange = (newValue) => {
     // Check if newValue is numeric before updating the state

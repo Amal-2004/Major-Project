@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import '../css/forget.css'
+import '../forget/forget.css'
 import { Button, TextField, Typography } from '@mui/material';
 
 const ForgetPassword = () => {
