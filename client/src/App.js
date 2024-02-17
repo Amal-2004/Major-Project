@@ -1,4 +1,5 @@
- import { Route, Routes } from "react-router-dom";
+
+import { Route, Routes } from "react-router-dom";
 import LoginForm from "./login/login";
 import SignupForm from "./login/signup";
 import Dashboard from "./component/assets/js/dashboard";
@@ -22,5 +23,4 @@ function App()
 }
 export default App
  
-
 

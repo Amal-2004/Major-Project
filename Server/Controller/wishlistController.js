@@ -8,14 +8,14 @@ const wishlistProduct = async (req, res) => {
     const newWishlist = new Wishlist({
       customerID,
       productID,
-    });
+    })
     const savedWishlist = await newWishlist.save()
     res.status(201).json(savedWishlist);
     console.log('Wishlist Created Successfully')
   } catch (error) {
     res.status(400).json({ message: error.message })
   }
-};
+}
 
 // Get a wishlist by ID
 const getWishlistById = async (req, res) => {
@@ -28,7 +28,7 @@ const getWishlistById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
-};
+}
 
 // Update a wishlist by ID
 const updateWishlist = async (req, res) => {
@@ -44,7 +44,7 @@ const updateWishlist = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
-};
+}
 
 // Delete a wishlist by ID
 const deleteWishlist = async (req, res) => {
@@ -58,11 +58,11 @@ const deleteWishlist = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
-};
+}
 
 export default {
   wishlistProduct,
   getWishlistById,
   updateWishlist,
   deleteWishlist,
-};
+}
