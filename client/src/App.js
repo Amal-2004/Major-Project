@@ -8,7 +8,7 @@ import Otp from "./component/forget/otp";
 import Resetpassword from "./component/forget/resetpassword";
 import CustomCard from "./component/assets/js/card";
 import Sidebar from "./component/Dashboard/sidenavebar";
-import Productupload from "./component/products/proupload";
+import Productupload from "./component/products/productupload";
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
         <Route path='/resetpassword' Component={Resetpassword} />
         <Route path="/card" Component={CustomCard} />
         <Route path="/sidenavebar" Component={Sidebar} />
-        <Route path="/proupload" Component={Productupload} />
+        <Route path="/productupload" Component={Productupload} />
       </Routes>
     </>
   )

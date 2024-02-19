@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import "./product.css"
 import React from 'react'
 
 function Navbar() {
@@ -7,10 +8,9 @@ function Navbar() {
     <div>
       <AppBar>
         <Toolbar>
-          <ArrowBackIcon />
-          
-          <Typography variant='h6' gutterBottom >R&R POWER TOOLS</Typography>
-          <Typography variant='h5' gutterBottom>Product Upload</Typography>
+          <ArrowBackIcon id="back" />
+          <Typography variant='h6' gutterBottom id="title">R&R POWER TOOLS</Typography>
+          <Typography variant='h5' gutterBottom id="upload-head">Product Upload</Typography>
         </Toolbar>
       </AppBar>
     </div>
