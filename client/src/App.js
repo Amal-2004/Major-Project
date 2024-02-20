@@ -9,11 +9,13 @@ import Resetpassword from "./component/forget/resetpassword";
 import CustomCard from "./component/assets/js/card";
 import Sidebar from "./component/Dashboard/sidenavebar";
 import Productupload from "./component/products/productupload";
+import Home from "./component/home/home"
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" Component={LoginForm} />
+      <Route path="/" Component={Home} />
+        <Route path="/login" Component={LoginForm} />
         <Route path="/signup" Component={SignupForm} />
         <Route path="/dashboard" Component={Dashboard} />
         <Route path="/forgetpassword" Component={Forgetpassword} />
