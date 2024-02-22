@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import {
-  Home as HomeIcon,
+  GridView as GridViewIcon,
   Folder as FolderIcon,
   Assignment as AssignmentIcon,
   Save as SaveIcon,
@@ -21,7 +21,7 @@ const Sidebar = ({ children }) => {
   };
 
   const routes = [
-    { path: '/', name: 'Home', icon: <HomeIcon /> },
+    { path: '/', name: 'Dashboard', icon: <GridViewIcon /> },
     { path: '/filemanage', name: 'File', icon: <FolderIcon /> },
     { path: '/order', name: 'Order', icon: <AssignmentIcon /> },
     { path: '/save', name: 'Save', icon: <SaveIcon /> },
@@ -35,7 +35,7 @@ const Sidebar = ({ children }) => {
         <div className='side-menu'>
           {isOpen && <Typography variant='h5' gutterBottom>Dashboard</Typography>}
           <div id='menu'>
-            <MenuIcon onClick={toggleSidebar} />
+            <MenuIcon onClick={toggleSidebar} style={{marginRight:'10px'}}/>
           </div>
         </div>
         <section className='side-icon'>

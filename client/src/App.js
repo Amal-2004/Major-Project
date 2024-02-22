@@ -1,4 +1,4 @@
-
+/* 
 import { Route, Routes } from "react-router-dom";
 import LoginForm from "./component/login/login";
 import SignupForm from "./component/signup/signup";
@@ -28,9 +28,9 @@ function App() {
     </>
   )
 }
-export default App
+export default App */
 
-/* import React from 'react';
+import React from 'react';
 import Index from './component/pages';
 
 function App() {
@@ -42,5 +42,5 @@ function App() {
 }
 
 export default App;  
-  */
+  
 

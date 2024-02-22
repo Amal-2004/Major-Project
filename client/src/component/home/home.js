@@ -19,7 +19,7 @@ function Home() {
       </div>
 
       <div className="img">
-        <img src="./assets/images/cutter.png" alt="Cutter" />
+        <img src="" alt="Cutter" />
       </div>
 
       <div className="content">
