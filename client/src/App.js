@@ -11,6 +11,7 @@ import Sidebar from "./component/Dashboard/sidenavebar";
 import Productupload from "./component/products/productupload";
 import Home from "./component/home/home"
 import OrderList  from "./component/orderList/orderList";
+import ProductList  from "./component/productList/productList";
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/sidenavebar" Component={Sidebar} />
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
+        <Route path="/productlist" Component={ProductList} />
       </Routes>
     </>
   )

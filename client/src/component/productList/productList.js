@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
-import { Box, Button, Card, CardActions, CardContent, TextField } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent } from '@mui/material';
 import Navbar from './navbar';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -33,19 +33,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, ordered_by, customer_mail,quantity, amount,ordered_at,status ) {
-  return { name, ordered_by, customer_mail,quantity, amount,ordered_at,status };
+function createData(product_name, product_model, amount,description,action ) {
+  return { product_name, product_model, amount,description,action };
 }
 
 const rows = [
-  createData(1,'Grinder','Aravind','aravind@gmail.com',10,1000,'21-08-2024' ),
+  createData(1,'Grinder','gdhgsg',2000,'dfghj','3456'),
   createData(2, ),
   createData(3, ),
   createData(4, ),
   createData(5,  ),
 ];
 
-function OrderList() {
+function ProductList() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
@@ -60,26 +60,24 @@ function OrderList() {
                       <TableRow>
                         <StyledTableCell>S.No</StyledTableCell>
                         <StyledTableCell align="right">Product Name</StyledTableCell>
-                        <StyledTableCell align="right">Ordered by</StyledTableCell>
-                        <StyledTableCell align="right">Customer's E-mail</StyledTableCell>
-                        <StyledTableCell align="right">Quantity</StyledTableCell>
-                        <StyledTableCell align="right">Total Amount</StyledTableCell>
-                        <StyledTableCell align="right">Ordered at</StyledTableCell>
-                        <StyledTableCell align="right">Status</StyledTableCell>
+                        <StyledTableCell align="right">Product Model</StyledTableCell>
+                        <StyledTableCell align="right">Amount</StyledTableCell>
+                        <StyledTableCell align="right">Description</StyledTableCell>
+                        <StyledTableCell align="right">Action</StyledTableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
+
                       {rows.map((row) => (
-                        <StyledTableRow key={row.name}>
+                        <StyledTableRow key={row.product_name}>
                           <StyledTableCell component="th" scope="row">
-                            {row.name}
+                            {row.product_name}
                           </StyledTableCell>
-                          <StyledTableCell align="right">{row.ordered_by}</StyledTableCell>
-                          <StyledTableCell align="right">{row.customer_mail}</StyledTableCell>
-                          <StyledTableCell align="right">{row.quantity}</StyledTableCell>
+                          <StyledTableCell align="right">{row.product_model}</StyledTableCell>
                           <StyledTableCell align="right">{row.amount}</StyledTableCell>
-                          <StyledTableCell align="right">{row.ordered_at}</StyledTableCell>
-                          <StyledTableCell align="right">{row.status}</StyledTableCell>
+                          <StyledTableCell align="right">{row.description}</StyledTableCell>
+                          <StyledTableCell align="right">{row.action}</StyledTableCell>
+                         
 
                         </StyledTableRow>
                       ))}
@@ -96,4 +94,4 @@ function OrderList() {
   );
 }
 
-export default OrderList;
+export default ProductList;
