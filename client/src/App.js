@@ -10,6 +10,7 @@ import CustomCard from "./component/assets/js/card";
 import Sidebar from "./component/Dashboard/sidenavebar";
 import Productupload from "./component/products/productupload";
 import Home from "./component/home/home"
+import OrderList  from "./component/orderList/orderList";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/card" Component={CustomCard} />
         <Route path="/sidenavebar" Component={Sidebar} />
         <Route path="/productupload" Component={Productupload} />
+        <Route path="/orderlist" Component={OrderList} />
       </Routes>
     </>
   )
