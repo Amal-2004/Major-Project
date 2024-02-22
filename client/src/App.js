@@ -1,4 +1,4 @@
-/* 
+ 
 import { Route, Routes } from "react-router-dom";
 import LoginForm from "./component/login/login";
 import SignupForm from "./component/signup/signup";
@@ -12,6 +12,7 @@ import Productupload from "./component/products/productupload";
 import Home from "./component/home/home"
 import OrderList  from "./component/orderList/orderList";
 import ProductList  from "./component/productList/productList";
+import PopupWindow from "./component/productList/add";
 function App() {
   return (
     <>
@@ -28,13 +29,14 @@ function App() {
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
+        <Route path="/add" Component={PopupWindow} />
       </Routes>
     </>
   )
 }
-export default App */
+export default App 
 
-import React from 'react';
+/* import React from 'react';
 import Index from './component/pages';
 
 function App() {
@@ -45,6 +47,6 @@ function App() {
   );
 }
 
-export default App;  
+export default App;  */ 
   
 

@@ -12,6 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { tableCellClasses } from '@mui/material/TableCell';
 
+
 const theme = createTheme();
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -49,10 +50,13 @@ function ProductList() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
+      
       <div className='box'>
-        <Box width='1200px'>
+     
+        <Box width='1200px' >
           <Card id="card" className='card'>
             <CardContent>
+            
               <div className='product-con'>
                 <TableContainer component={Paper} id='tbl'>
                   <Table sx={{ minWidth: 700 }} aria-label="customized table">
