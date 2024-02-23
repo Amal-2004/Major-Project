@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './home.css';
-
+import homeLogo from '../assets/images/cutter.png'
 function Home() {
   return (
     <>
@@ -19,7 +19,7 @@ function Home() {
       </div>
 
       <div className="img">
-        <img src="" alt="Cutter" />
+        <img src={homeLogo} alt="Cutter" />
       </div>
 
       <div className="content">
@@ -33,8 +33,12 @@ function Home() {
           <div className="about-text">
             <h1>About us</h1>
             <h2><span>R&R</span> Power Tools</h2>
-            <h5>Since 1990</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ratione iste ipsum vel. Magnam, vitae mollitia. Provident magnam illum autem eos recusandae at, beatae perspiciatis ullam nam velit, repellat tempora.</p>
+            <h5>Since </h5>
+            <p>At R&R Power tools, we're not just another power tool retailer; we're your
+              partner in craftsmanship, your ally in efficiency, and your source for top-tier tools
+              that get the job done right, every time. Whether you're a seasoned professional or a DIY
+              enthusiast, we've got everything you need to tackle any project with confidence and precision.
+            </p>
           </div>
         </div>
       </section>
@@ -45,30 +49,39 @@ function Home() {
         </div>
         {/* ... (your existing service cards) ... */}
         <div className="box">
-        <div className="card">
+          <div className="card">
             <i className="fas fa-bars"></i>
-            <h5>Web Development</h5>
+            <h5>Extensive Selection</h5>
             <div className="pra">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, saepe. Reprehenderit, quo. Quis reiciendis in veritatis, accusantium minima temporibus illum molestias natus voluptatibus officia, impedit dolore hic, cupiditate voluptatum dolor!</p>
+              <p>Explore our vast inventory featuring the latest and greatest power tools
+                from industry-leading brands.
+                From drills and saws to sanders and routers, we've got it all under one roof</p>
             </div>
+          </div>
+
+          <div className="card">
+            <i className="fas fa-bars"></i>
+            <h5>Quality Assurance</h5>
+            <div className="pra">
+              <p>We understand the importance of reliability
+                when it comes to power tools. That's why we handpick each product in our inventory to ensure it meets our rigorous standards for performance and durability.
+              </p>
+            </div>
+          </div>
+
+          <div className="card">
+            <i className="fas fa-bars"></i>
+            <h5>Expert Guidance</h5>
+            <div className="pra">
+              <p>Not sure which tool is right for your project? Our knowledgeable staff
+                is here to help! Whether you need advice on tool selection, maintenance tips, or
+                troubleshooting assistance, we're always just a phone call or email away.</p>
+            </div>
+          </div>
         </div>
 
-        <div className="card">
-            <i className="fas fa-bars"></i>
-            <h5>Web Development</h5>
-            <div className="pra">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, saepe. Reprehenderit, quo. Quis reiciendis in veritatis, accusantium minima temporibus illum molestias natus voluptatibus officia, impedit dolore hic, cupiditate voluptatum dolor!</p>
-            </div>
-        </div>
+        
 
-        <div className="card">
-            <i className="fas fa-bars"></i>
-            <h5>Web Development</h5>
-            <div className="pra">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, saepe. Reprehenderit, quo. Quis reiciendis in veritatis, accusantium minima temporibus illum molestias natus voluptatibus officia, impedit dolore hic, cupiditate voluptatum dolor!</p>
-            </div>
-        </div>
-        </div>
 
       </div>
 
@@ -76,7 +89,7 @@ function Home() {
         <div className="contact-container">
           <h2>Contact Us</h2>
           <p>For any Queries about Products or our Service, Please Contact us</p>
-          
+
           <form action="#" method="post" className="contact-form">
             <input type="text" name="name" placeholder="Your Name" />
             <input type="email" name="email" placeholder="Your Email" />
