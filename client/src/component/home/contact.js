@@ -41,7 +41,7 @@ export const Contact = (props) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>Get In Touch</h2>
+                <h2>News Letter</h2>
                 <p>
                   Please fill out the form below to send us an email and we will
                   get back to you as soon as possible.
@@ -100,7 +100,7 @@ export const Contact = (props) => {
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3 style={{fontSize:'35px',fontWeight:'bold'}}>Contact Info</h3>
+              <h3 style={{fontSize:'35px',fontWeight:'bold'}}>Contact us</h3>
               <p style={{fontSize:'20px'}}>
                 <span style={{fontSize:'25px'}}>
                   <i class="fa-solid fa-location-crosshairs" style={{fontSize:'25px'}}></i>   Address

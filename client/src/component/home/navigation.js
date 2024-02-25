@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-
+import './home.css'
 const Navigation = (props) => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
