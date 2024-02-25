@@ -1,11 +1,12 @@
 import Swal from 'sweetalert2';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../login/login.css';
+import './login.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { TextField, Button, Typography,IconButton,InputAdornment } from '@mui/material';
- 
+import { TextField, Button, Typography, IconButton, InputAdornment } from '@mui/material';
+import axios from 'axios'; // Import Axios
+
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,24 +30,16 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:9000/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await axios.post('http://localhost:9000/auth/login', { email, password });
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.message);
+      if (!response.data.success) {
+        throw new Error(response.data.message);
       }
 
       Swal.fire('Success!', 'Login successful!', 'success');
-      setEmail('')
-      setPassword('')
-      // Optionally, you can redirect the user to another page upon successful login
-      window.location.href = '/dashboard';
+      setEmail('');
+      setPassword('');
+      // window.location.href = '/dashboard';
     } catch (error) {
       Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
     }

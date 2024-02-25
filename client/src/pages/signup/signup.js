@@ -6,7 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import '../signup/signup.css';
+import './signup.css';
+import axios from 'axios'; // Import Axios
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');
@@ -38,18 +39,10 @@ const SignupForm = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:9000/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
+      const response = await axios.post('http://localhost:9000/auth/signup', { username, email, password });
   
-      const data = await response.json(); // Parsing response body
-  
-      if (!response.ok) {
-        throw new Error(data.message);
+      if (!response.data.success) {
+        throw new Error(response.data.message);
       }
   
       Swal.fire('Success!', 'Signup successful!', 'success');
@@ -57,8 +50,7 @@ const SignupForm = () => {
       setEmail('')
       setPassword('')
       setShowConfirmPassword('')
-      // Optionally, you can redirect the user to another page upon successful signup
-      // window.location.href = '/login';
+      window.location.href = '/login';
     } catch (error) {
       Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
     }
@@ -157,7 +149,7 @@ const SignupForm = () => {
 
         <Typography variant="body2" style={{ marginTop: '10px' }}>
           Already have an account?{' '}
-          <Link to="/" style={{ textDecoration: 'none', color: '#1976D2' }}>
+          <Link to="/login" style={{ textDecoration: 'none', color: '#1976D2' }}>
             Login
           </Link>
         </Typography>

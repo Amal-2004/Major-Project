@@ -82,7 +82,6 @@ function ProductList() {
                           <StyledTableCell align="right">{row.description}</StyledTableCell>
                           <StyledTableCell align="right">{row.action}</StyledTableCell>
                          
-
                         </StyledTableRow>
                       ))}
                     </TableBody>
