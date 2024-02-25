@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 #back{
     font-size: 30px;
     font-weight: bold;
@@ -16,16 +19,21 @@
     margin-top: 10px;
     font-weight: bold;
 }
-#upload-head{
+#head{
     margin-left: 350px;
-    margin-top: 10px;
-    font-size: 25px;
+    margin-top: -10px;
     font-weight: bold;
+    font-size: 20px;
 }
 .card{
-    height: 550px;
-    width: 1200px;
+    margin-left: -90px;
+    height: 650px;
+    width: 1400px;
+    border: 2px solid black;
     overflow: hidden;
+}
+#card-con{
+    overflow-y: auto;
 }
 #tbl{
     position: fixed;
@@ -33,4 +41,9 @@
     width: 1100px;
     height: 450px;
     overflow-x: hidden;
+}
+#accordion{
+    border: 1px solid black;
+    justify-content: space-around;
+    border-radius: 13px;
 }
