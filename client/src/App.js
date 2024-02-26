@@ -6,6 +6,7 @@ import Otp from "./component/forget/otp";
 import Resetpassword from "./component/forget/resetpassword";
 import Sidebar from "./pages/Dasboard/sidebar/sidenavebar";
 import Productupload from "./component/products/productupload";
+<<<<<<< HEAD
 import Home from "./pages/home/home"
 import OrderList from "./component/orderList/orderList";
 import ProductList from "./component/productList/productList";
@@ -13,6 +14,13 @@ import PopupWindow from "./component/productList/add";
 import Index from "./pages/Dasboard/content";
 //import Newsletter from "./component/newsletters/newsletter"
 
+=======
+import Home from "./component/home/home"
+import OrderList  from "./component/orderList/orderList";
+import ProductList  from "./component/productList/productList";
+import Newsletter from "./component/newsletters/newsletter"
+import Cart from './component/cart/cart'
+>>>>>>> e73e958fdc32c7027558a4ca1404cea816eda0e9
 function App() {
   return (
     <>
@@ -27,8 +35,13 @@ function App() {
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
+<<<<<<< HEAD
         <Route path="/add" Component={PopupWindow} />
         <Route path="/index" Component={Index}/>
+=======
+        <Route path="/newsletter" Component={Newsletter} />
+        <Route path="/cart" Component={Cart} />
+>>>>>>> e73e958fdc32c7027558a4ca1404cea816eda0e9
       </Routes>
     </>
   )
