@@ -13,6 +13,7 @@ import Home from "./component/home/home"
 import OrderList  from "./component/orderList/orderList";
 import ProductList  from "./component/productList/productList";
 import Newsletter from "./component/newsletters/newsletter"
+import Cart from './component/cart/cart'
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
         <Route path="/newsletter" Component={Newsletter} />
+        <Route path="/cart" Component={Cart} />
       </Routes>
     </>
   )
