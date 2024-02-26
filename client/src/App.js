@@ -11,6 +11,8 @@ import OrderList from "./component/orderList/orderList";
 import ProductList from "./component/productList/productList";
 import PopupWindow from "./component/productList/add";
 import Index from "./pages/Dasboard/content";
+//import Newsletter from "./component/newsletters/newsletter"
+
 function App() {
   return (
     <>
@@ -31,9 +33,15 @@ function App() {
     </>
   )
 }
+
 export default App
 
 /* import React from 'react';
+=======
+export default App 
+/* 
+import React from 'react';
+>>>>>>> 84f7e8ecf3f49ceba7d1c059a8f7a51e364743d5
 import Index from './component/pages';
 
 function App() {
@@ -48,3 +56,4 @@ export default App;  */
 
 
 
+ 
