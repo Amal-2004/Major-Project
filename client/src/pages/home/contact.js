@@ -20,7 +20,7 @@ export const Contact = (props) => {
     e.preventDefault();
     console.log(name, email, message);
     
-<<<<<<< HEAD:client/src/pages/home/contact.js
+
     /* replace below with your own Service ID, Template 
   ID and Public Key from your EmailJS account */ 
     
@@ -35,8 +35,6 @@ export const Contact = (props) => {
           console.log(error.text);
         }
       );
-=======
->>>>>>> e73e958fdc32c7027558a4ca1404cea816eda0e9:client/src/component/home/contact.js
   };
   return (
     <div>

@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { tableCellClasses } from '@mui/material/TableCell';
+import axios from 'axios';
 
 
 const theme = createTheme();
@@ -38,13 +39,8 @@ function createData(product_name, product_model, amount,description,action ) {
   return { product_name, product_model, amount,description,action };
 }
 
-const rows = [
-  createData(1,'Grinder','gdhgsg',2000,'dfghj','3456'),
-  createData(2, ),
-  createData(3, ),
-  createData(4, ),
-  createData(5,  ),
-];
+const rows = await axios.get('http://localhost:9000/auth/',{})
+              .then()
 
 function ProductList() {
   return (

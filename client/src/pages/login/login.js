@@ -56,7 +56,7 @@ const LoginForm = () => {
   return (
     <div id='login-body'>
       <div className='login'>
-        <Typography variant="h4" id="head" gutterBottom>
+        <Typography variant="h1" id="head" gutterBottom>
           Login
         </Typography>
 
