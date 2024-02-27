@@ -5,7 +5,7 @@ import './login.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { TextField, Button, Typography, IconButton, InputAdornment } from '@mui/material';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -32,14 +32,15 @@ const LoginForm = () => {
     try {
       const response = await axios.post('http://localhost:9000/auth/login', { email, password });
 
-      if (!response.data.success) {
+      if (!response.status === 200) {
         throw new Error(response.data.message);
       }
 
       Swal.fire('Success!', 'Login successful!', 'success');
       setEmail('');
       setPassword('');
-      // window.location.href = '/dashboard';
+      // Optionally, you can redirect the user to another page upon successful login
+      //window.location.href = '/login';
     } catch (error) {
       Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
     }
@@ -49,14 +50,14 @@ const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = event => {
     event.preventDefault();
   };
 
   return (
     <div id='login-body'>
       <div className='login'>
-        <Typography variant="h1" id="head" gutterBottom>
+        <Typography variant="h4" id="head" gutterBottom>
           Login
         </Typography>
 
@@ -103,7 +104,7 @@ const LoginForm = () => {
           </Link>
         </Typography>
 
-        <Typography id="signup" variant="body2" style={{ marginTop: '10px', color: "black" }}>
+        <Typography id="signup" variant="body2" style={{ marginTop: '10px', color: 'black' }}>
           Don't have an account?{' '}
           <Link id="siup" to='/signup' style={{ textDecoration: 'none', color: '#1976D2' }}>
             Sign Up

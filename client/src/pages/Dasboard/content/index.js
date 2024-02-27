@@ -1,27 +1,26 @@
 
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Dashboard from './Dashboard'
+import Dashboard from '../../Dashboard'
 import Filemanage from './Filemanage'
 import Order from './Order'
 import Save from './Save'
 import Setting from './Setting'
 import User from './User'
-import Sidebar from '../sidebar/sidenavebar'
-
+import Sidebar from '../../../Dashboard/sidenavebar'
 
 function Index() {
   return (
     <div>
-     <Sidebar>
-        <Routes>
-          <Route path='/' Component={Dashboard} />
-          <Route path='/Filemanage' Component={Filemanage} />
-          <Route path='/Order' Component={Order} />
-          <Route path='/Save' Component={Save} />
-          <Route path='/Setting' Component={Setting} />
-          <Route path='/User' Component={User} />
-        </Routes>
+        <Sidebar>
+      <Routes>
+        <Route path='/' Component={Dashboard}/>
+        <Route path='/Filemanage' Component={Filemanage}/>
+        <Route path='/Order' Component={Order}/>
+        <Route path='/Save' Component={Save}/>
+        <Route path='/Setting' Component={Setting}/>
+        <Route path='/User' Component={User}/>
+      </Routes>
       </Sidebar>
     </div>
   )

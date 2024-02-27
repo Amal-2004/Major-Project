@@ -4,6 +4,7 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, Card, CardActions, CardContent, TextField } from '@mui/material';
 import Navbar from './navbar';
 
+
 function Productupload() {
   return (
     <>
@@ -25,6 +26,7 @@ function Productupload() {
               <TextField className='member' id='pr-price' autoComplete='off' label='Product Price' type='number' />
               <TextField className='member' id='pr-desc' autoComplete='off' label='Product Description' multiline maxRows={5} />
               <Button variant='contained' color='primary' id="upload">Upload</Button>
+
               </div>
               
             </CardContent>

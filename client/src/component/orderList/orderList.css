@@ -1,6 +1,3 @@
-body{
-    overflow: none;
-}
 #back{
     font-size: 30px;
     font-weight: bold;
@@ -15,14 +12,13 @@ body{
 }
 #title{
     margin-left: 20px;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 10px;
     font-weight: bold;
 }
 #upload-head{
     margin-left: 350px;
     margin-top: 10px;
-    font-size: 25px;
     font-weight: bold;
 }
 .card{

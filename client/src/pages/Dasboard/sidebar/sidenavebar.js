@@ -13,7 +13,7 @@ import {
 } from '@mui/icons-material';
 import './navebar.css';
 
-const Sidebar = ({ children }) => {
+const Admin = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -52,4 +52,4 @@ const Sidebar = ({ children }) => {
   );
 };
 
-export default Sidebar;
+export default Admin;

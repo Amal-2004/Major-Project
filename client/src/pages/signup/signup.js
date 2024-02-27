@@ -6,8 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import './signup.css';
-import axios from 'axios'; // Import Axios
+import '../signup/signup.css';
+import axios from 'axios';
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');
@@ -39,9 +39,12 @@ const SignupForm = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:9000/auth/signup', { username, email, password });
+      const response = await axios.post('http://localhost:9000/auth/signup',{username,email,password,confirmPassword})
+       
   
-      if (!response.data.success) {
+       // Parsing response body
+  
+       if (!response.status === 200) {
         throw new Error(response.data.message);
       }
   
@@ -50,7 +53,8 @@ const SignupForm = () => {
       setEmail('')
       setPassword('')
       setShowConfirmPassword('')
-      window.location.href = '/login';
+      // Optionally, you can redirect the user to another page upon successful signup
+      // window.location.href = '/login';
     } catch (error) {
       Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
     }
