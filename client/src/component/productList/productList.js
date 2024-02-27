@@ -28,7 +28,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     fontSize: 16,
   },
 }));
-
+ 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
@@ -47,7 +47,7 @@ function ProductList() {
         const response = await axios.get("http://localhost:9000/product",);
         if (response.status === 200) {
           setRows(response.data);
-          console.log(response.data.products); // Assuming the response data is an array of objects similar to the 'rows' structure you defined
+          console.log(response.data.products); 
         } else {
           throw new Error(response.data.message);
         }

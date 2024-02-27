@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState,useEffect}from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
 import { Box, Button, Card, CardActions, CardContent, TextField } from '@mui/material';
@@ -11,6 +11,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { tableCellClasses } from '@mui/material/TableCell';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const theme = createTheme();
 
@@ -33,19 +37,28 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, ordered_by, customer_mail,quantity, amount,ordered_at,status ) {
-  return { name, ordered_by, customer_mail,quantity, amount,ordered_at,status };
-}
-
-const rows = [
-  createData(1,'Grinder','Aravind','aravind@gmail.com',10,1000,'21-08-2024' ),
-  createData(2, ),
-  createData(3, ),
-  createData(4, ),
-  createData(5,  ),
-];
 
 function OrderList() {
+  const [row, setRows] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:9000/purchase",);
+        if (response.status === 200) {
+          setRows(response.data);
+          console.log(response.data.purchase); 
+        } else {
+          throw new Error(response.data.message);
+        }
+      } catch (error) {
+        Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
@@ -59,28 +72,28 @@ function OrderList() {
                     <TableHead>
                       <TableRow>
                         <StyledTableCell>S.No</StyledTableCell>
+                        <StyledTableCell align="right">CustomerID</StyledTableCell>
+                        <StyledTableCell align="right">Customer Name</StyledTableCell>
+                        <StyledTableCell align="right">Product ID</StyledTableCell>
                         <StyledTableCell align="right">Product Name</StyledTableCell>
-                        <StyledTableCell align="right">Ordered by</StyledTableCell>
-                        <StyledTableCell align="right">Customer's E-mail</StyledTableCell>
-                        <StyledTableCell align="right">Quantity</StyledTableCell>
-                        <StyledTableCell align="right">Total Amount</StyledTableCell>
+                        <StyledTableCell align="right">Delivered by</StyledTableCell>
                         <StyledTableCell align="right">Ordered at</StyledTableCell>
                         <StyledTableCell align="right">Status</StyledTableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {rows.map((row) => (
-                        <StyledTableRow key={row.name}>
+                    {row.map((rows, index) => (
+                        <StyledTableRow key={index}>
                           <StyledTableCell component="th" scope="row">
-                            {row.name}
+                            {index + 1}
                           </StyledTableCell>
-                          <StyledTableCell align="right">{row.ordered_by}</StyledTableCell>
-                          <StyledTableCell align="right">{row.customer_mail}</StyledTableCell>
-                          <StyledTableCell align="right">{row.quantity}</StyledTableCell>
-                          <StyledTableCell align="right">{row.amount}</StyledTableCell>
-                          <StyledTableCell align="right">{row.ordered_at}</StyledTableCell>
-                          <StyledTableCell align="right">{row.status}</StyledTableCell>
-
+                          <StyledTableCell align="left">{rows.customerID}</StyledTableCell>
+                          <StyledTableCell align="left">{rows.customerName}</StyledTableCell>
+                          <StyledTableCell align="left">{rows.productID}</StyledTableCell>
+                          <StyledTableCell align="left">{rows.productName}</StyledTableCell>
+                          <StyledTableCell align="left">{rows.deliveryPerson}</StyledTableCell>
+                          <StyledTableCell align="left">{rows.purchaseDate}</StyledTableCell>
+                          <StyledTableCell align="left"><EditIcon  style={{color:'green',cursor:'pointer'}}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<DeleteIcon style={{color:'red',cursor:'pointer'}}/></StyledTableCell>
                         </StyledTableRow>
                       ))}
                     </TableBody>
