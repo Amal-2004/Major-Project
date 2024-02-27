@@ -21,7 +21,7 @@ const Admin = ({ children }) => {
   };
 
   const routes = [
-    { path: '/', name: 'Dashboard', icon: <GridViewIcon /> },
+    { path: '/dashboard', name: 'Dashboard', icon: <GridViewIcon /> },
     { path: '/filemanage', name: 'File', icon: <FolderIcon /> },
     { path: '/order', name: 'Order', icon: <AssignmentIcon /> },
     { path: '/save', name: 'Save', icon: <SaveIcon /> },
