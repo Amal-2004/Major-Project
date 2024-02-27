@@ -21,7 +21,7 @@
     margin-top: 10px;
     font-weight: bold;
 }
-.card{
+#card{
     height: 550px;
     width: 1200px;
     overflow: hidden;

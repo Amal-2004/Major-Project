@@ -12,6 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { tableCellClasses } from '@mui/material/TableCell';
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -71,11 +72,11 @@ function ProductList() {
                     <TableHead>
                       <TableRow>
                         <StyledTableCell>S.No</StyledTableCell>
-                        <StyledTableCell align="right">Product Name</StyledTableCell>
-                        <StyledTableCell align="right">Product Model</StyledTableCell>
-                        <StyledTableCell align="right">Amount</StyledTableCell>
-                        <StyledTableCell align="right">Description</StyledTableCell>
-                        <StyledTableCell align="right">Action</StyledTableCell>
+                        <StyledTableCell align="left">Product Name</StyledTableCell>
+                        <StyledTableCell align="left">Product Model</StyledTableCell>
+                        <StyledTableCell align="left">Amount</StyledTableCell>
+                        <StyledTableCell align="left">Description</StyledTableCell>
+                        <StyledTableCell align="left">Action</StyledTableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -84,11 +85,11 @@ function ProductList() {
                           <StyledTableCell component="th" scope="row">
                             {index + 1}
                           </StyledTableCell>
-                          <StyledTableCell align="right">{row.productName}</StyledTableCell>
-                          <StyledTableCell align="right">{row.productModel}</StyledTableCell>
-                          <StyledTableCell align="right">{row.productPrice}</StyledTableCell>
-                          <StyledTableCell align="right">{row.description}</StyledTableCell>
-                          <StyledTableCell align="right"><EditIcon /></StyledTableCell>
+                          <StyledTableCell align="left">{row.productName}</StyledTableCell>
+                          <StyledTableCell align="left">{row.productModel}</StyledTableCell>
+                          <StyledTableCell align="left">{row.productPrice}</StyledTableCell>
+                          <StyledTableCell align="left">{row.description}</StyledTableCell>
+                          <StyledTableCell align="left"><EditIcon  style={{color:'green',cursor:'pointer'}}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<DeleteIcon style={{color:'red',cursor:'pointer'}}/></StyledTableCell>
                         </StyledTableRow>
                       ))}
                     </TableBody>
