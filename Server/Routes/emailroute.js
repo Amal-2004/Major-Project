@@ -10,11 +10,11 @@ router.post('/forgetpassword', async (req, res) => {
   try {
     const { email } = req.body;
 
-  /*   const user = await users.findOne({ email });
+    const user = await users.findOne({ email });
 
     if (!user) {
       return res.status(404).json({ message: 'Email not found' });
-    } */
+    } 
 
     // Generate OTP
     const otp = generateOTP();
