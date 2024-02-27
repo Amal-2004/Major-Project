@@ -35,7 +35,7 @@ function App() {
       </Routes>
 
 
-      <Admin>
+      {/* <Admin>
       <Routes>
         <Route path='/Dashboard' Component={Dashboard}/>
         <Route path='/Filemanage' Component={Filemanage}/>
@@ -44,7 +44,7 @@ function App() {
         <Route path='/Setting' Component={Setting}/>
         <Route path='/User' Component={User}/>
       </Routes> 
-      </Admin>
+      </Admin> */}
     </>
   )
 }
