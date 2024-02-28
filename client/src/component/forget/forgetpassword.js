@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import '../forget/forget.css'
+import axios from 'axios'; // Import Axios
+import '../forget/forget.css';
 import { Button, TextField, Typography } from '@mui/material';
 
 const ForgetPassword = () => {
@@ -18,43 +19,48 @@ const ForgetPassword = () => {
       return;
     }
 
-    setMessage(`Password reset link sent to ${email}`);
-  
-    setEmail(''); 
-    window.location.href = '/otp';
+    try {
+      const response = await axios.post('/api/reset-password', { email });
+
+      if(!response.status===200){
+        
+      }
+      setMessage(`Password reset link sent to ${email}`);
+      setEmail('');
+      window.location.href = '/otp';
+    } catch (error) {
+      Swal.fire('Error!', 'Failed to submit form', 'error');
+    }
   };
 
   return (
     <div id='forget-body'>
-       <div id='forget'>
-        
-      <Typography id="title" variant="h5"  gutterBottom>
-        Enter your email to get OTP
-      </Typography>
-
-      <TextField
-        variant="outlined"
-        required
-        autoComplete="off"
-        id="email"
-        label="Email Address"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)} />
-
-      <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
-        Submit
-      </Button>
-
-      {message && (
-
-        <Typography variant="body1" align="center">
-          {message}
+      <div id='forget'>
+        <Typography id="title" variant="h6" gutterBottom>
+          Enter your email to get OTP
         </Typography>
 
-      )}
+        <TextField
+          variant="outlined"
+          required
+          autoComplete="off"
+          id="email"
+          label="Email Address"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-    </div>
+        <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
+
+        {message && (
+          <Typography variant="body1" align="center">
+            {message}
+          </Typography>
+        )}
+      </div>
     </div>
   );
 };

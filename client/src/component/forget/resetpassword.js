@@ -3,6 +3,7 @@ import React from 'react'
 import '../forget/reset.css'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
+import axios from 'axios'
 
 function Resetpassword() {
   const [password, setPassword] = useState()
@@ -22,6 +23,17 @@ function Resetpassword() {
     if(password !== resetpassword){
       Swal.fire('Error','Password does not match','error')
       return
+    }
+    try{
+      const request =await axios.get()
+
+      if(!request.status ===200){
+        throw new Error(request.data.message);
+      }
+      
+    }
+    catch(error) {
+      Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
     }
 
   }

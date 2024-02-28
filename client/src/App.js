@@ -7,28 +7,26 @@ import Resetpassword from "./component/forget/resetpassword";
 import Productupload from "./component/products/productupload";
 import OrderList  from "./component/orderList/orderList";
 import ProductList  from "./component/productList/productList";
-import Homes from "./pages/home/home";
 import Cart from "./component/cart/cart";
-//import Index from "./pages/Dasboard/content/index";
-//import Admin from "./pages/Dasboard/sidebar/sidenavebar";
-/* import Dashboard from "./pages/Dasboard/content/Dashboard";
+import Home from "./Home";
+
+
+ /* import Dashboard from "./pages/Dasboard/content/Dashboard";
 import Filemanage from "./pages/Dasboard/content/Filemanage";
 import Order from "./pages/Dasboard/content/Order";
 import Save from "./pages/Dasboard/content/Save";
 import Setting from "./pages/Dasboard/content/Setting";
-import User from "./pages/Dasboard/content/User";
- */ function App() {
+import User from "./pages/Dasboard/content/User"; */
+  function App() {
   return (
     <div>
       <Routes>
-        
-        <Route path="/" exact Component={Homes} />
+        <Route path="/" Component={Home}/>
         <Route path="/login" Component={LoginForm} />
         <Route path="/signup" Component={SignupForm} />
         <Route path="/forgetpassword" Component={Forgetpassword} />
         <Route path="/otp" Component={Otp} />
         <Route path='/resetpassword' Component={Resetpassword} />
-        {/* <Route path="/index" Component={Index} /> */} 
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
@@ -47,7 +45,7 @@ import User from "./pages/Dasboard/content/User";
         <Route path='/Setting' Component={Setting}/>
         <Route path='/User' Component={User}/>
       </Routes> 
-       </Admin>  */} 
+       </Admin> */}  
     </div>
   )
 }
@@ -57,14 +55,18 @@ export default App
 
 /* 
 import React from 'react'
-import Index from './pages/Dasboard/content'
+import { Typography } from '@mui/material'
+//import Index from './pages/Dasboard/content'
 
 function App() {
   return (
     <div>
-      <Index/>
+       <Index/> 
+      <Typography variant="h4" color='red' id="h" gutterBottom>
+          Sign Up
+        </Typography>
     </div>
   )
 }
 
-export default App  */
+export default App  */ 

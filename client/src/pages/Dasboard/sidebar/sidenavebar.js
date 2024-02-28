@@ -13,6 +13,7 @@ import {
 } from '@mui/icons-material';
 import './navebar.css';
 
+
 const Admin = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -49,6 +50,7 @@ const Admin = ({ children }) => {
       </motion.div>
       <main>{children}</main>
     </div>
+    
   );
 };
 

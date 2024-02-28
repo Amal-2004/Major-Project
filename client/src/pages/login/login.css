@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   /*background-color: black;*/
-    background-image: url("https://source.unsplash.com/random?powertools");
+  /* background-image: url("https://source.unsplash.com/random?powertools"); */
   background-size: cover; 
 } 
 .login {
