@@ -1,68 +1,66 @@
-import cart from '../Models/cartModel.js'
+import Cart from '../Models/cartModel.js';
 
 const cartProduct = async (req, res) => {
   try {
-    console.log(455)
-    const { customerID, productID } = req.body
+    const { customerID, productID } = req.body;
 
-    const newcart = new cart({
+    const newCart = new Cart({
       customerID,
       productID,
-    })
-    const savedcart = await newcart.save()
+    });
 
-    res.status(201).json(savedcart)
-    console.log('cart Created Successfully')
+    const savedCart = await newCart.save();
+
+    res.status(201).json(savedCart);
+    console.log('Cart Created Successfully');
   } catch (error) {
-    res.status(400).json({ message: error.message })
+    res.status(400).json({ message: error.message });
   }
-}
-// Get a wishlist by ID
-const getcartById = async (req, res) => {
+};
+
+const getCartById = async (req, res) => {
   try {
-    const cart = await cart.findById(req.params.id)
+    const cart = await Cart.findById(req.params.id);
     if (!cart) {
-      return res.status(404).json({ message: 'cart not found' })
+      return res.status(404).json({ message: 'Cart not found' });
     }
-    res.json(cart)
+    res.json(cart);
   } catch (error) {
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ message: error.message });
   }
-}
+};
 
-// Update a cart by ID
-const updatecart = async (req, res) => {
+const updateCart = async (req, res) => {
   try {
-    const updatedcart = await Wishlist.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    const updatedCart = await Cart.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
-    if (!updatedcart) {
-      return res.status(404).json({ message: 'Wishlist not found' })
+    if (!updatedCart) {
+      return res.status(404).json({ message: 'Cart not found' });
     }
 
-    res.json(updatedcart)
-    console.log('cart Updated Successfully')
+    res.json(updatedCart);
+    console.log('Cart Updated Successfully');
   } catch (error) {
-    res.status(400).json({ message: error.message })
+    res.status(400).json({ message: error.message });
   }
-}
+};
 
-// Delete a cart by ID
-const deletecart = async (req, res) => {
+const deleteCart = async (req, res) => {
   try {
-    const deletedcart = await Wishlist.findByIdAndDelete(req.params.id)
-    if (!deletedcart) {
-      return res.status(404).json({ message: 'cart not found' })
+    const deletedCart = await Cart.findByIdAndDelete(req.params.id);
+    if (!deletedCart) {
+      return res.status(404).json({ message: 'Cart not found' });
     }
 
-    res.json({ message: 'cart removed successfully' })
+    res.json({ message: 'Cart removed successfully' });
   } catch (error) {
-    res.status(400).json({ message: error.message })
+    res.status(400).json({ message: error.message });
   }
-}
+};
 
 export default {
   cartProduct,
-  getcartById,
-  updatecart,
-  deletecart,
-}
+  getCartById,
+  updateCart,
+  deleteCart,
+};

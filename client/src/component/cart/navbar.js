@@ -9,7 +9,7 @@ function Navbar() {
         <Toolbar>
           <ArrowBackIcon id="back" />
           <Typography variant='h6' gutterBottom id="title">R&R POWER TOOLS</Typography>
-          <Typography variant='h5' gutterBottom id="head">Cart</Typography>
+          <Typography variant='h5' gutterBottom id="head"> Product Cart</Typography>
         </Toolbar>
       </AppBar>
     </div>
