@@ -7,7 +7,7 @@ import Resetpassword from "./component/forget/resetpassword";
 import Productupload from "./component/products/productupload";
 import OrderList  from "./component/orderList/orderList";
 import ProductList  from "./component/productList/productList";
-import Homes from "./pages/home/home";
+import Homes from "./Home/index";
 import Cart from "./component/cart/cart";
 //import Index from "./pages/Dasboard/content/index";
 //import Admin from "./pages/Dasboard/sidebar/sidenavebar";
