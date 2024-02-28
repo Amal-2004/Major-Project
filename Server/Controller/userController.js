@@ -1,5 +1,5 @@
 
-import User from '../Models/usermodel.js';
+import User from '../Models/authModel.js';
 
 export const registerUser = async (req, res) => {
   try {
