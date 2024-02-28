@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Adminroute() {
+function dataContext() {
   return (
     <div>
-      
+      asdfghj
     </div>
   )
 }
 
-export default Adminroute
+export default dataContext

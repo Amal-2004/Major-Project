@@ -12,7 +12,7 @@ import Admin from '../sidebar/sidenavebar'
 function Index() {
   return (
     <div>
-        <Admin>
+      <Admin>  
       <Routes>
         <Route path='/Dashboard' Component={Dashboard}/>
         <Route path='/Filemanage' Component={Filemanage}/>
