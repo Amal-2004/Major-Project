@@ -21,7 +21,6 @@ import User from "./pages/Dasboard/content/User";
   return (
     <div>
       <Routes>
-        
         <Route path="/" exact Component={Homes} />
         <Route path="/login" Component={LoginForm} />
         <Route path="/signup" Component={SignupForm} />
