@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../forget/otp.css';
+import './otp.css';
+import Swal from 'sweetalert2';
 import { Typography, Button } from '@mui/material';
 import { MuiOtpInput } from 'mui-one-time-password-input';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
+
 
 const Otp = () => {
   const [otp, setOtp] = useState('');
@@ -15,26 +17,36 @@ const Otp = () => {
     }
   };
 
+  const handleVerify =async()=>{
+    
+    try {
+      const response = await axios.post('http://localhost:9000/otp/forgetpassword',otp)
+      
+       
+        setOtp('');
+        Swal.fire({title:"success",text:"",icon:"success",timer:2000})
+        window.location.href = '/resetpassword'; // Assuming '/otp' is the route to enter OTP
+    } catch (error) {
+      
+      // Swal.fire('Error!', 'Failed to submit form', 'error');
+      if(error.response.status){
+        Swal.fire({
+          title: error.response.statusText,
+          text: error.response.data.message,
+          icon: "error",
+        });
+      }else{
+        Swal.fire({ title: "Error", text: error.message, icon: "error" });
+      }
+    }
+  }
+
   const handleResend = () => {
     // You can place logic here to resend the OTP via email or any other method
     // For now, let's just reset the timer
     setResendTime(60);
   };
 
-  const handleVerify = () => {
-    // Send OTP verification request
-    axios.post("http://localhost:9000/otp", { otp })
-      .then(response => {
-        // Handle success response
-        console.log('Verification Successful', response.data);
-        // You can navigate user to the next page or perform further actions
-      })
-      .catch(error => {
-        // Handle error response
-        console.error('Verification Failed', error);
-        // You can show an error message to the user
-      });
-  };
 
   useEffect(() => {
     const timer =

@@ -1,6 +1,6 @@
 import { Button, TextField, Typography } from '@mui/material'
 import React from 'react'
-import '../forget/reset.css'
+import './reset.css'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
@@ -25,7 +25,7 @@ function Resetpassword() {
       return
     }
     try{
-      const request =await axios.get()
+      const request =await axios.post('http://localhost:9000/otp')
 
       if(!request.status ===200){
         throw new Error(request.data.message);

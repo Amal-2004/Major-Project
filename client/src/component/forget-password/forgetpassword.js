@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios'; // Import Axios
-import '../forget/forget.css';
+import './forget.css';
 import { Button, TextField, Typography } from '@mui/material';
 
 const ForgetPassword = () => {
@@ -20,16 +20,24 @@ const ForgetPassword = () => {
     }
 
     try {
-      const response = await axios.post('/api/reset-password', { email });
-
-      if(!response.status===200){
-        
-      }
-      setMessage(`Password reset link sent to ${email}`);
-      setEmail('');
-      window.location.href = '/otp';
+      const response = await axios.post('http://localhost:9000/otp/forgetpassword', { email });
+      
+        setMessage(`Password reset link sent to ${email}`);
+        setEmail('');
+        Swal.fire({title:"success",text:"Email sent with code",icon:"success",timer:2000})
+        window.location.href = '/otp'; // Assuming '/otp' is the route to enter OTP
     } catch (error) {
-      Swal.fire('Error!', 'Failed to submit form', 'error');
+      console.log(email);
+      // Swal.fire('Error!', 'Failed to submit form', 'error');
+      if(error.response.status){
+        Swal.fire({
+          title: error.response.statusText,
+          text: error.response.data.message,
+          icon: "error",
+        });
+      }else{
+        Swal.fire({ title: "Error", text: error.message, icon: "error" });
+      }
     }
   };
 

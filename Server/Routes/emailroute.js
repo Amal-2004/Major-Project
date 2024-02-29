@@ -2,6 +2,7 @@
 import express from 'express';
 import generateOTP from '../utils/otpGenerator.js';
 import sendEmail from '../utils/emailSender.js';
+import users from '../Models/usermodel.js';
 
 const router = express.Router();
 

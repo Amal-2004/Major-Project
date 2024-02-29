@@ -57,12 +57,12 @@ const LoginForm = () => {
   return (
     <div id='login-body'>
       <div className='login'>
-        <Typography variant="h4" id="head" gutterBottom>
+        <Typography variant="h4" id="login-txt" gutterBottom>
           Login
         </Typography>
 
         <TextField
-          id="email"
+          id="login-email"
           autoComplete='off'
           label="Email"
           variant="outlined"
@@ -71,7 +71,7 @@ const LoginForm = () => {
         />
 
         <TextField
-          id="password"
+          id="login-password"
           autoComplete='off'
           label="Password"
           variant="outlined"
@@ -94,7 +94,7 @@ const LoginForm = () => {
           }}
         />
 
-        <Button id='button' variant="contained" color="primary" onClick={handleLogin}>
+        <Button id='login-button' variant="contained" color="primary" onClick={handleLogin}>
           Login
         </Button>
 
