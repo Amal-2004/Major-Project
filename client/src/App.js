@@ -27,6 +27,7 @@ import User from "./pages/Dasboard/content/User";
         <Route path="/forgetpassword" Component={Forgetpassword} />
         <Route path="/otp" Component={Otp} />
         <Route path='/resetpassword' Component={Resetpassword} />
+        {/* <Route path="/index" Component={Index} /> */} 
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
@@ -47,21 +48,20 @@ export default App
   
 
 
-
-/* import React from 'react'
-//import { Typography } from '@mui/material'
-import Index from './pages/Dasboard/content'
+/* 
+import React from 'react'
+import { Typography } from '@mui/material'
+//import Index from './pages/Dasboard/content'
 
 function App() {
   return (
     <div>
        <Index/> 
-       <Typography variant="h4" color='red' id="h" gutterBottom>
+      <Typography variant="h4" color='red' id="h" gutterBottom>
           Sign Up
-        </Typography> 
+        </Typography>
     </div>
   )
 }
 
-export default App   
- */
+export default App  */ 

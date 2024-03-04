@@ -1,35 +1,21 @@
+
 // routes/forgetPassword.js
 import express from 'express';
-import generateOTP from '../utils/otpGenerator.js';
-import sendEmail from '../utils/emailSender.js';
-import users from '../Models/usermodel.js';
-
-const router = express.Router();
 
 
-router.post('/forgetpassword', async (req, res) => {
-  try {
-    const { email } = req.body;
 
-    const user = await users.findOne({ email });
 
-    if (!user) {
-      return res.status(404).json({ message: 'Email not found' });
-    } 
+import controller from '../Controller/otpController.js'
+import middleware from "../Middleware/middleware.js";
+const route = express.Router()
 
-    // Generate OTP
-    const otp = generateOTP();
 
-    const subject = 'Forget Password OTP';
-    const text = `Your OTP for forget password is: ${otp}`;
-    console.log(text)
-    await sendEmail(email, subject, text);
 
-    res.status(200).json({ message: 'OTP sent successfully' });
-  } catch (error) {
-    console.error('Error sending OTP:', error.message);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
+route.post('/reset-password',controller.resetPassword) 
+route.post('/reset-otp',controller.resetPasswordConfirm)
+route.post('/new-password/',middleware.verifyToken,controller.newPassword)
 
-export default router;
+//route.post('/auth-token',controller.authenticate) // To get jwt token
+//route.post('/verify-token',controller.verifyToken) // To verify jwt token
+
+export default route
