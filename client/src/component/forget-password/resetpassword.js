@@ -25,15 +25,26 @@ function Resetpassword() {
       return
     }
     try{
-      const request =await axios.post('http://localhost:9000/otp')
-
-      if(!request.status ===200){
-        throw new Error(request.data.message);
-      }
+      const token=localStorage.getItem("resetToken")
+      const request =await axios.post('http://localhost:9000/otp/new-password',{password},{
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }})
+      Swal.fire({title:"success",text:request.data,icon:"success",timer:2000})
+      
+      window.location.href='/'
       
     }
     catch(error) {
-      Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
+      if(error.response.status){
+        Swal.fire({
+          title: error.response.statusText,
+          text: error.response.data,
+          icon: "error",
+        });
+      }else{
+        Swal.fire({ title: "Error", text: error.message, icon: "error" });
+      }
     }
 
   }

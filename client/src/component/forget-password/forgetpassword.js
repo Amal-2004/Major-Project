@@ -20,7 +20,7 @@ const ForgetPassword = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:9000/otp/forgetpassword', { email });
+      const response = await axios.post('http://localhost:9000/otp/reset-password', { email });
       
         setMessage(`Password reset link sent to ${email}`);
         setEmail('');
@@ -32,7 +32,7 @@ const ForgetPassword = () => {
       if(error.response.status){
         Swal.fire({
           title: error.response.statusText,
-          text: error.response.data.message,
+          text: error.response.data,
           icon: "error",
         });
       }else{

@@ -20,11 +20,10 @@ const Otp = () => {
   const handleVerify =async()=>{
     
     try {
-      const response = await axios.post('http://localhost:9000/otp/forgetpassword',otp)
-      
-       
+      const response = await axios.post('http://localhost:9000/otp/reset-otp',{otp})    
         setOtp('');
-        Swal.fire({title:"success",text:"",icon:"success",timer:2000})
+        Swal.fire({title:"success",text:response.data.message,icon:"success",timer:2000})
+        localStorage.setItem("resetToken",response.data.resetToken)
         window.location.href = '/resetpassword'; // Assuming '/otp' is the route to enter OTP
     } catch (error) {
       
@@ -32,7 +31,7 @@ const Otp = () => {
       if(error.response.status){
         Swal.fire({
           title: error.response.statusText,
-          text: error.response.data.message,
+          text: error.response.data,
           icon: "error",
         });
       }else{

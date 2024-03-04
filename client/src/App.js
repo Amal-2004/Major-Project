@@ -15,8 +15,6 @@ import Save from "./pages/Dasboard/content/Save";
 import Setting from "./pages/Dasboard/content/Setting";
 import User from "./pages/Dasboard/content/User";
 
-
-
   function App() {
   return (
     <div>
