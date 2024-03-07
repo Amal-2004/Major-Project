@@ -10,8 +10,8 @@ import wishlistRoutes from './Routes/wishlistRoutes.js'
 import cartRoutes from './Routes/cartRoutes.js'
 import newsLetter from './Routes/newsLetterRoutes.js'
 import bodyParser from 'body-parser';
-import router from './Routes/emailroute.js';
-import otp from './Routes/emailroute.js'
+/* import router from './Routes/emailroute.js';
+import otp from './Routes/emailroute.js' */
 const app = express()
 
 app.use(express.json())
@@ -27,7 +27,7 @@ app.use('/wishlist', wishlistRoutes)
 app.use('/cart',cartRoutes)
 app.use('/newsletter',newsLetter)
 app.use(bodyParser.json());
-app.use('/otp', otp);
+//app.use('/otp', otp);
 await mongoose.connect('mongodb://127.0.0.1:27017/powertools').then(() => {
   app.listen(9000, () => console.log('Server Running in port 9000'))
 }).catch(err => console.log(err.message))

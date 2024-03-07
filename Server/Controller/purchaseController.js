@@ -18,6 +18,14 @@ const purchaseProduct = async (req, res) => {
     res.status(400).json({ message: error.message })
   }
 }
+const getAllPurchases = async (req, res) => {
+  try {
+    const allPurchases = await Purchase.find();
+    res.json(allPurchases);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 //Purchase by Purchased ID
 const getPurchaseById = async (req, res) => {
   try {
@@ -62,4 +70,5 @@ export default {
   getPurchaseById,
   updatePurchase,
   deletePurchase,
+  getAllPurchases
 }
