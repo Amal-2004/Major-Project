@@ -3,6 +3,7 @@ import Purchase from '../Models/purchase.js'
 const purchaseProduct = async (req, res) => {
   try {
     const { customerID, customerName, productID, productName, deliveryPerson } = req.body
+    console.log(customerID, customerName, productID, productName, deliveryPerson)
     const newPurchase = new Purchase({
       customerID,
       customerName,

@@ -27,7 +27,7 @@
     overflow: hidden;
 }
 #tbl{
-    position: fixed;
+    position: relative;
     top: 170px;
     left: 150px;
     width: 1300px;

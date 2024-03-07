@@ -8,7 +8,7 @@ import Navbar from './navbar';
 function Productupload() {
   return (
     <>
-      <Navbar />
+      <Navbar  value='product Upload'/>
       <div className='box'>
         <Box width='1200px'  >
           <Card id="card" className='card' >

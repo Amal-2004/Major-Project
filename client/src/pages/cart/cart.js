@@ -24,7 +24,7 @@ const QuantityControl = () => {
   };
 
   return (
-    <div>
+    <div className='Quantity-Controller'>
       <IconButton onClick={handleDecrement}>
         <RemoveIcon />
       </IconButton>
@@ -43,6 +43,19 @@ function Cart() {
   const shipping = 40;
   const total = amount + shipping;
 
+  const arr=[1,2,3,4,5,6,7,8,9,10]
+  const [quantity, setQuantity] = useState(1);
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -51,66 +64,28 @@ function Cart() {
           <Card id='card'>
             <CardContent>
               <div className='cont'>
-                <div className='products'>
+                {arr.map((i)=>{
+                  <div className='products' id={'item'+{i}}>
                   <img src='your_image_source_here' alt='Product' />
                   <h2>{name}</h2>
                   <h3>{description}</h3>
                   <h5>Rs: {amount}</h5>
                   <Box display='flex' alignItems='center' id='quantity'>
-                    <QuantityControl id="quantity" />
+                    <div className='Quantity-Controller'>
+                      <IconButton onClick={handleDecrement}>
+                        <RemoveIcon />
+                      </IconButton>
+                      <span>{quantity}</span>
+                      <IconButton onClick={handleIncrement}>
+                        <AddIcon />
+                      </IconButton>
+                    </div>
                   </Box>
                   <Button variant='contained' color='error' id='remove' size='large'>
-                      Remove
-                    </Button>
+                    Remove
+                  </Button>
                 </div>
-                <div className='products'>
-                  <img src='your_image_source_here' alt='Product' />
-                  <h2>{name}</h2>
-                  <h3>{description}</h3>
-                  <h5>Rs: {amount}</h5>
-                  <Box display='flex' alignItems='center' id='quantity'>
-                    <QuantityControl id="quantity" />
-                  </Box>
-                  <Button variant='contained' color='error' id='remove' size='large'>
-                      Remove
-                    </Button>
-                </div>
-                <div className='products'>
-                  <img src='your_image_source_here' alt='Product' />
-                  <h2>{name}</h2>
-                  <h3>{description}</h3>
-                  <h5>Rs: {amount}</h5>
-                  <Box display='flex' alignItems='center' id='quantity'>
-                    <QuantityControl id="quantity" />
-                  </Box>
-                  <Button variant='contained' color='error' id='remove' size='large'>
-                      Remove
-                    </Button>
-                </div>
-                <div className='products'>
-                  <img src='your_image_source_here' alt='Product' />
-                  <h2>{name}</h2>
-                  <h3>{description}</h3>
-                  <h5>Rs: {amount}</h5>
-                  <Box display='flex' alignItems='center' id='quantity'>
-                    <QuantityControl id="quantity" />
-                  </Box>
-                  <Button variant='contained' color='error' id='remove' size='large'>
-                      Remove
-                    </Button>
-                </div>
-                <div className='products'>
-                  <img src='your_image_source_here' alt='Product' />
-                  <h2>{name}</h2>
-                  <h3>{description}</h3>
-                  <h5>Rs: {amount}</h5>
-                  <Box display='flex' alignItems='center' id='quantity'>
-                    <QuantityControl id="quantity" />
-                  </Box>
-                  <Button variant='contained' color='error' id='remove' size='large'>
-                      Remove
-                    </Button>
-                </div>
+                })}
               </div>
               <div className='amount'>
                 <h2>Total Amount</h2>
