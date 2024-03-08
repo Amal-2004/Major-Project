@@ -16,16 +16,16 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-app.use('/register', userRoutes)
+app.use('/register', userRoutes)//signup
 app.use('/insert', userRoutes)
 app.use('/update', userRoutes)
-app.use('/delete', userRoutes)
+app.use('/delete', userRoutes)//user deletion
 app.use('/auth', authRoutes)
-app.use('/product', productRoutes)
-app.use('/purchase', purchaseRoutes)
-app.use('/wishlist', wishlistRoutes)
-app.use('/cart',cartRoutes)
-app.use('/newsletter',newsLetter)
+app.use('/product', productRoutes)//productList(admin)
+app.use('/purchase', purchaseRoutes)//productList(admin)
+app.use('/wishlist', wishlistRoutes)//whishlist
+app.use('/cart',cartRoutes)//cart
+app.use('/newsletter',newsLetter)//contactUs
 app.use(bodyParser.json());
 //app.use('/otp', otp);
 await mongoose.connect('mongodb://127.0.0.1:27017/powertools').then(() => {
