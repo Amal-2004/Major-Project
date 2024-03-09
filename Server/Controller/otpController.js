@@ -51,7 +51,7 @@ async function resetPassword(req, res) {
 
 async function resetPasswordConfirm(req, res) {
   try {
-    const { otp } = req.params;
+    const { otp } = req.body;
     const value = +otp
     console.log(value);
     //const { password } = req.body;

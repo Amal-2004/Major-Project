@@ -14,7 +14,7 @@ import {
 import './navebar.css';
 
 
-const Admin = ({ children }) => {
+const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -54,4 +54,4 @@ const Admin = ({ children }) => {
   );
 };
 
-export default Admin;
+export default Sidebar;

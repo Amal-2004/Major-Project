@@ -1,4 +1,4 @@
-import React , {useState,useEffect}from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
 import { Box, Card, CardActions, CardContent } from '@mui/material';
@@ -21,7 +21,7 @@ const theme = createTheme();
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,fontSize:14
+    color: theme.palette.common.white, fontSize: 14
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 16,
@@ -37,33 +37,34 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+const OrderList = () => {
+  const [rows, setRows] = useState([]);
 
-function OrderList() {
-  const [row, setRows] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:9000/purchase",);
-        if (response.status === 200) {
-          setRows(response.data);
-          console.log(response.data.purchase); 
-        } else {
-          throw new Error(response.data.message);
-        }
-      } catch (error) {
-        Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
+useEffect(()=>{
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://65e716bf53d564627a8de1b2.mockapi.io/pt/orderlist");
+      if (response.status === 200) {
+        setRows(response.data); // Assuming response.data is an array of purchases
+      } else {
+        throw new Error(response.data.message);
       }
-    };
+    } catch (error) {
+      Swal.fire('Error!', error.message || 'Something went wrong!', 'error');
+    }
+  };
 
-    fetchData();
-  }, []);
+  fetchData();
+},[])
+
+    console.log(rows);
 
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
       <div className='box'>
-        <Box width='1200px'>
+        <Box width='800px'>
           <Card id="card" className='card'>
             <CardContent>
               <div className='product-con'>
@@ -78,22 +79,25 @@ function OrderList() {
                         <StyledTableCell align="right">Product Name</StyledTableCell>
                         <StyledTableCell align="right">Delivered by</StyledTableCell>
                         <StyledTableCell align="right">Ordered at</StyledTableCell>
-                        <StyledTableCell align="right">Status</StyledTableCell>
+                        <StyledTableCell align="right">Actions</StyledTableCell> {/* Changed to Actions */}
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                    {row.map((rows, index) => (
+                      {rows.map((row, index) => (
                         <StyledTableRow key={index}>
                           <StyledTableCell component="th" scope="row">
                             {index + 1}
                           </StyledTableCell>
-                          <StyledTableCell align="left">{rows.customerID}</StyledTableCell>
-                          <StyledTableCell align="left">{rows.customerName}</StyledTableCell>
-                          <StyledTableCell align="left">{rows.productID}</StyledTableCell>
-                          <StyledTableCell align="left">{rows.productName}</StyledTableCell>
-                          <StyledTableCell align="left">{rows.deliveryPerson}</StyledTableCell>
-                          <StyledTableCell align="left">{rows.purchaseDate}</StyledTableCell>
-                          <StyledTableCell align="left"><EditIcon  style={{color:'green',cursor:'pointer'}}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<DeleteIcon style={{color:'red',cursor:'pointer'}}/></StyledTableCell>
+                          <StyledTableCell align="left">{row.customerID}</StyledTableCell>
+                          <StyledTableCell align="left">{row.customerName}</StyledTableCell>
+                          <StyledTableCell align="left">{row.productID}</StyledTableCell>
+                          <StyledTableCell align="left">{row.productName}</StyledTableCell>
+                          <StyledTableCell align="left">{row.deliveryPerson}</StyledTableCell>
+                          <StyledTableCell align="left">{row.purchaseDate}</StyledTableCell>
+                          <StyledTableCell align="left">
+                            <EditIcon style={{ color: 'green', cursor: 'pointer' }} />
+                            <DeleteIcon style={{ color: 'red', cursor: 'pointer', marginLeft: '5px' }} />
+                          </StyledTableCell>
                         </StyledTableRow>
                       ))}
                     </TableBody>
