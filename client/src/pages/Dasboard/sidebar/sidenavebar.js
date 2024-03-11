@@ -22,12 +22,12 @@ const Sidebar = ({ children }) => {
   };
 
   const routes = [
-    { path: '/dashboard', name: 'Dashboard', icon: <GridViewIcon /> },
-    { path: '/filemanage', name: 'File', icon: <FolderIcon /> },
-    { path: '/order', name: 'Order', icon: <AssignmentIcon /> },
-    { path: '/save', name: 'Save', icon: <SaveIcon /> },
-    { path: '/setting', name: 'Setting', icon: <SettingsIcon /> },
-    { path: '/User', name: 'User', icon: <AccountCircleIcon /> }
+    { path: '/dash', name: 'Dashboard', icon: <GridViewIcon /> },
+    { path: '', name: 'File', icon: <FolderIcon /> },
+    { path: 'order', name: 'Order', icon: <AssignmentIcon /> },
+    { path: 'save', name: 'Save', icon: <SaveIcon /> },
+    { path: 'setting', name: 'Setting', icon: <SettingsIcon /> },
+    { path: 'User', name: 'User', icon: <AccountCircleIcon /> }
   ];
 
   return (
