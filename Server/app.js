@@ -12,6 +12,7 @@ import newsLetter from './Routes/newsLetterRoutes.js'
 import bodyParser from 'body-parser';
  import router from './Routes/emailroute.js';
 import otp from './Routes/emailroute.js' 
+import Feedback from './Routes/feedbackRoutes.js'
 const app = express()
 
 app.use(express.json())
@@ -28,6 +29,7 @@ app.use('/cart',cartRoutes)//cart
 app.use('/newsletter',newsLetter)//contactUs
 app.use(bodyParser.json());
 app.use('/otp', otp);
+app.use('/feedback', Feedback);//feedback
 await mongoose.connect('mongodb://127.0.0.1:27017/powertools').then(() => {
   app.listen(9000, () => console.log('Server Running in port 9000'))
 }).catch(err => console.log(err.message))
