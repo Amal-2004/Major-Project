@@ -11,10 +11,10 @@ export const getAllFeedback = async (req, res) => {
 };
 
 export const createFeedback = async (req, res) => {
-  const { name, email, phoneNumber, ratings } = req.body;
+  const { name, email, phoneNumber,message, ratings } = req.body;
 
   try {
-    const newFeedback = new Feedback({ name, email, phoneNumber, ratings });
+    const newFeedback = new Feedback({ name, email,message, phoneNumber, ratings });
     await newFeedback.save();
     res.status(201).json(newFeedback);
   } catch (error) {

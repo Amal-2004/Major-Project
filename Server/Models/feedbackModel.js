@@ -14,6 +14,10 @@ const feedbackSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  message: {
+    type: String,
+    required: true,
+  },
   ratings: {
     type: Number,
     required: true,
