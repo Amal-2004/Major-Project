@@ -22,8 +22,8 @@ app.use('/insert', userRoutes)
 app.use('/update', userRoutes)
 app.use('/delete', userRoutes)//user deletion
 app.use('/auth', authRoutes)
-app.use('/product', productRoutes)//productList(admin)
-app.use('/purchase', purchaseRoutes)//productList(admin)
+app.use('/product', productRoutes)// /product
+app.use('/purchase', purchaseRoutes)//purchase/purchase
 app.use('/wishlist', wishlistRoutes)//whishlist
 app.use('/cart',cartRoutes)//cart
 app.use('/newsletter',newsLetter)//contactUs
