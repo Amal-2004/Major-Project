@@ -14,7 +14,7 @@ export const createFeedback = async (req, res) => {
   const { name, email, phoneNumber,message, ratings } = req.body;
 
   try {
-    const newFeedback = new Feedback({ name, email, phoneNumber, message,ratings });
+    const newFeedback = new Feedback({ name, email,message, phoneNumber, ratings });
     await newFeedback.save();
     res.status(201).json(newFeedback);
   } catch (error) {

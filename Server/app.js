@@ -10,7 +10,6 @@ import wishlistRoutes from './Routes/wishlistRoutes.js'
 import cartRoutes from './Routes/cartRoutes.js'
 import newsLetter from './Routes/newsLetterRoutes.js'
 import bodyParser from 'body-parser';
- import router from './Routes/emailroute.js';
 import otp from './Routes/emailroute.js' 
 import Feedback from './Routes/feedbackRoutes.js'
 const app = express()

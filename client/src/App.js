@@ -9,7 +9,7 @@ import OrderList  from "./pages/orderList/orderList";
 import ProductList  from "./pages/productList/productList";
 import Cart from "./pages/cart/cart";
 import Dashboard from "./pages/Dasboard/content/Dashboard";
-import Filemanage from "./pages/Dasboard/content/Filemanage";
+//import Filemanage from "./pages/Dasboard/content/Filemanage";
 import Order from "./pages/Dasboard/content/Order";
 import Save from "./pages/Dasboard/content/Save";
 import Setting from "./pages/Dasboard/content/Setting";
@@ -30,12 +30,15 @@ import User from "./pages/Dasboard/content/User";
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
         <Route path="/cart" Component={Cart} />
-        <Route path="/dash" Component={Dashboard}/>
-        <Route path="file" Component={Filemanage}/>
-        <Route path="order" Component={Order}/>
-        <Route path="save" Component={Save}/>
-        <Route path="setting" Component={Setting}/>
-        <Route path="user" Component={User}/>
+
+
+        <Route path="/dash" Component={Dashboard}>
+          {/* <Route path="" Component={Filemanage}/> */}
+          <Route path="order" Component={Order}/>
+          <Route path="save" Component={Save}/>
+          <Route path="setting" Component={Setting}/>
+          <Route path="user" Component={User}/>
+        </Route>
       </Routes>
       </div>
       
