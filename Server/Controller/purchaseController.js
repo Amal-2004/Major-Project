@@ -2,14 +2,15 @@ import Purchase from '../Models/purchase.js'
 
 const purchaseProduct = async (req, res) => {
   try {
-    const { customerID, customerName, productID, productName, deliveryPerson } = req.body
-    console.log(customerID, customerName, productID, productName, deliveryPerson)
+    const { customerID, customerName, productID, productName, paymentMode,amount } = req.body
+    console.log(customerID, customerName, productID, productName,  paymentMode,amount)
     const newPurchase = new Purchase({
       customerID,
       customerName,
       productID,
       productName,
-      deliveryPerson,
+     paymentMode,
+     amount
     })
     //Create new purchase record
     const savedPurchase = await newPurchase.save()
