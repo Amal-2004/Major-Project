@@ -1,4 +1,4 @@
- import { Route, Routes } from "react-router-dom";
+/*  import { Route, Routes } from "react-router-dom";
 import LoginForm from "./component/login/login";
 import SignupForm from "./component/signup/signup";
 import Forgetpassword from "./component/forget-password/forgetpassword";
@@ -25,7 +25,7 @@ import User from "./pages/Dasboard/content/User";
         <Route path="/forgetpassword" Component={Forgetpassword} />
         <Route path="/otp" Component={Otp} />
         <Route path='/resetpassword' Component={Resetpassword} />
-        {/* <Route path="/index" Component={Index} /> */} 
+        <Route path="/index" Component={Index} />  
         <Route path="/productupload" Component={Productupload} />
         <Route path="/orderlist" Component={OrderList} />
         <Route path="/productlist" Component={ProductList} />
@@ -33,7 +33,7 @@ import User from "./pages/Dasboard/content/User";
 
 
         <Route path="/dash" Component={Dashboard}>
-          {/* <Route path="" Component={Filemanage}/> */}
+           <Route path="" Component={Filemanage}/> 
           <Route path="order" Component={Order}/>
           <Route path="save" Component={Save}/>
           <Route path="setting" Component={Setting}/>
@@ -45,24 +45,18 @@ import User from "./pages/Dasboard/content/User";
       </div>
   )
 }
-export default App  
-  
+export default App   */
 
-
-/* 
-import React from 'react'
-import { Typography } from '@mui/material'
-//import Index from './pages/Dasboard/content'
-
-function App() {
+import { Route, Routes } from "react-router-dom"
+import HomePage from "./Home"
+import ProductDetailPage from "./Productdetails"
+function App({products}) {
   return (
-    <div>
-       <Index/> 
-      <Typography variant="h4" color='red' id="h" gutterBottom>
-          Sign Up
-        </Typography>
-    </div>
+    <Routes>
+      <Route path="/" Component={HomePage} />
+      <Route path="/product/:id" render={() => <ProductDetailPage  />} />
+    </Routes>
   )
 }
 
-export default App  */ 
+export default App   

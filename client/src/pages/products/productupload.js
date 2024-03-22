@@ -3,15 +3,13 @@ import './product.css'
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, Card, CardActions, CardContent, TextField } from '@mui/material';
 import Navbar from './navbar';
-
-
 function Productupload() {
   return (
     <>
       <Navbar  value='product Upload'/>
       <div className='box'>
         <Box width='1200px'  >
-          <Card id="card" className='card' >
+          <Card id="card" className='card'>
             <CardContent>
               
               <div className='product-con'>
