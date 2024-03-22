@@ -6,7 +6,8 @@ const purchaseSchema = new mongoose.Schema({
   customerName: { type: String, required: true },
   productID: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
   productName: { type: String, required: true },
-  deliveryPerson: { type: String },
+  paymentMode :{type: String},
+  amount : {type: Number},
   purchaseDate: { type: Date, default: Date.now },
 })
 
