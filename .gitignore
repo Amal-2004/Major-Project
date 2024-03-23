@@ -14348,3 +14348,17 @@ node_modules/yargs/yargs.js
 Server/app.js
 Server/Routes/emailroute.js
 client/src/App.js
+node_modules/razorpay/node_modules/typescript/lib/typesMap.json
+node_modules/razorpay/node_modules/typescript/lib/typingsInstaller.js
+node_modules/razorpay/node_modules/typescript/lib/watchGuard.js
+node_modules/razorpay/node_modules/typescript/lib/zh-cn/diagnosticMessages.generated.json
+node_modules/razorpay/node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json
+node_modules/razorpay/node_modules/typescript/LICENSE.txt
+node_modules/razorpay/node_modules/typescript/README.md
+node_modules/razorpay/node_modules/typescript/SECURITY.md
+node_modules/razorpay/node_modules/typescript/ThirdPartyNoticeText.txt
+node_modules/razorpay/README.md
+node_modules/request-promise/errors.js
+node_modules/request-promise/lib/rp.js
+node_modules/request-promise/LICENSE
+node_modules/request-promise/README.md
