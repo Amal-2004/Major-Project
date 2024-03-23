@@ -23,7 +23,7 @@ const purchaseProduct = async (req, res) => {
 const getAllPurchases = async (req, res) => {
   try {
     const allPurchases = await Purchase.find();
-    res.json(allPurchases);
+    res.json(allPurchases.reverse());
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

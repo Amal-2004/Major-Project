@@ -4,7 +4,7 @@ import Feedback from '../Models/feedbackModel.js';
 export const getAllFeedback = async (req, res) => {
   try {
     const feedback = await Feedback.find();
-    res.json(feedback);
+    res.json(feedback.reverse());
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

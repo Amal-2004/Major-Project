@@ -16,6 +16,7 @@ export const createData = async (req, res) => {
         const newData = await data.save();
         res.status(201).json(newData);
     } catch (err) {
+        console.log(err.message);
         res.status(400).json({ message: err.message });
     }
 };
