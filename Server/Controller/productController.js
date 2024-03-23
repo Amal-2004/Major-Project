@@ -2,9 +2,9 @@ import Product from '../Models/product.js'
 
 const createProduct = async (req, res) => {
   try {
-    const { productName, productPrice, productModel,description } = req.body
+    const { productName, productPrice, productModel,description, Image } = req.body
     console.log(productName, productPrice, productModel,description)
-    if (!productName || !productPrice ||!productModel || !description) {
+    if (!productName || !productPrice ||!productModel || !description||!Image) {
       throw new Error('Required properties are missing in the request body')
     }
 
@@ -12,7 +12,8 @@ const createProduct = async (req, res) => {
       productName,
       productPrice,
       productModel,
-      description
+      description,
+      Image
     })
 
     const savedProduct = await newProduct.save()
