@@ -12,6 +12,8 @@ import newsLetter from './Routes/newsLetterRoutes.js'
 import bodyParser from 'body-parser';
 import router from './Routes/emailroute.js';
 import otp from './Routes/emailroute.js'
+import adminLoginRoutes from './adminLoginRoutes.js';
+
 const app = express()
 
 app.use(express.json())
@@ -22,6 +24,7 @@ app.use('/update', userRoutes)
 app.use('/delete', userRoutes)
 app.use('/auth', authRoutes)
 app.use('/product', productRoutes)
+app.use('/admin', adminLoginRoutes);
 app.use('/purchase', purchaseRoutes)
 app.use('/wishlist', wishlistRoutes)
 app.use('/cart',cartRoutes)
