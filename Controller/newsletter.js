@@ -13,7 +13,8 @@ export const sendNewsletter = async (req, res) => {
 export const getAllNewsletter = async (req, res) => {
   try {
     const newsletters = await Newsletter.find();
-    res.json({ newsletters })
+    const rev=newsletters.reverse()
+    res.json({ rev })
   } catch (error) {
     res.status(500).json({ success: false, error: error.message })
   }
