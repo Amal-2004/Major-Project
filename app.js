@@ -16,7 +16,6 @@ import orderRoutes from './Routes/orderRoutes.js'
 import addressRoutes from './Routes/addressRoutes.js'
 //import paymentRoutes from "./Routes/paymentRoutes.js"
 const app = express()
-
 app.use(express.json())
 app.use(cors())
 app.use('/register', userRoutes)//signup
